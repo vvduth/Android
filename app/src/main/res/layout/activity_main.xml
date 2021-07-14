@@ -5,44 +5,104 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity"
-    android:padding="100dp">
+    >
 
-
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Name"
-        android:layout_centerInParent="true"
-        android:id="@+id/edtTxtName"
-        android:textColor="@color/material_on_surface_emphasis_medium"
-        android:textStyle="italic|bold"
-        android:inputType="textEmailAddress"
-       />
-
-
-
-    <Button
+    <RelativeLayout
         android:layout_width="wrap_content"
-        android:id="@+id/btnHello"
         android:layout_height="wrap_content"
-        android:layout_centerVertical="true"
+        android:id="@+id/HarryRelLayout"
         android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp">
+
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Harry Potter"
+            android:id="@+id/checkboxHarry"
+            android:checked="true"/>
+
+
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Harry Kane"
+            android:id="@+id/checkboxHarryKane"
+            android:layout_toRightOf="@id/checkboxHarry"
+            android:layout_marginLeft="15dp"
+            android:checked="true"/>
+
+
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Harry Styles"
+            android:id="@+id/checkboxHarryStyles"
+            android:layout_toRightOf="@id/checkboxHarryKane"
+            android:layout_marginLeft="15dp"
+            android:checked="false"/>
+
+    </RelativeLayout>
+
+
+
+    <RadioGroup
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/HarryRelLayout"
         android:layout_marginTop="20dp"
-        android:background="#0f80a6"
+        android:layout_centerHorizontal="true"
+        android:orientation="horizontal"
+        android:id="@+id/rgMaritalStatus">
 
-        android:text="Say Hello"
-        app:backgroundTint="@color/teal_700"
-        android:layout_below="@+id/edtTxtName"
-        />
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/HarryRelLayout"
+            android:layout_marginLeft="25dp"
+            android:layout_marginTop="20dp"
+            android:text="Married"
+            android:id="@+id/rbMarried"
+            android:checked="true"
+             />
 
-    <TextView
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/HarryRelLayout"
+            android:layout_marginLeft="25dp"
+            android:layout_marginTop="20dp"
+            android:text="Single"
+            android:id="@+id/rbSingle"
+            />
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/HarryRelLayout"
+            android:layout_marginLeft="25dp"
+            android:layout_marginTop="20dp"
+            android:text="In relationship"
+            android:id="@+id/inRelationship"
+            />
+
+
+    </RadioGroup>
+
+
+    <ProgressBar
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/txtHello"
-        android:text="Hello"
-        android:layout_below="@id/btnHello"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="30dp"
-        android:textSize="20dp" />
+        android:layout_centerInParent="true"
+        android:id="@+id/progressBar"
+        android:visibility="visible"
+        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+
+        android:max="100"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"/>
+
+
+
+
 
 </RelativeLayout>
