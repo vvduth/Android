@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:padding="100dp">
+
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Name"
+        android:layout_centerInParent="true"
+        android:id="@+id/edtTxtName"
+        android:textColor="@color/material_on_surface_emphasis_medium"
+        android:textStyle="italic|bold"
+        android:inputType="textEmailAddress"
+       />
+
+
+
+    <Button
+        android:layout_width="wrap_content"
+        android:id="@+id/btnHello"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:background="#0f80a6"
+
+        android:text="Say Hello"
+        app:backgroundTint="@color/teal_700"
+        android:layout_below="@+id/edtTxtName"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/txtHello"
+        android:text="Hello"
+        android:layout_below="@id/btnHello"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"
+        android:textSize="20dp" />
+
+</RelativeLayout>
