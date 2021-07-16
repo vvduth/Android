@@ -16,6 +16,7 @@ import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.ProgressBar;
 import android.widget.RadioGroup;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -24,6 +25,7 @@ import java.util.ArrayList;
 public class MainActivity extends AppCompatActivity {
 
    private ListView citiesList ;
+   private Spinner studentsSpinner;
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -31,6 +33,22 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         citiesList = findViewById(R.id.citiesList);
+        studentsSpinner  = findViewById(R.id.studentsSpinner);
+
+
+       /* final ArrayList<String> students = new ArrayList<>();
+        students.add("Duc");
+        students.add("Sarah");
+        students.add("Mason");
+        students.add("Kyle");
+        students.add("Raheem");
+
+        ArrayAdapter<String> studentsAdapter = new ArrayAdapter<>(
+                this, android.R.layout.simple_spinner_dropdown_item,
+                students
+        );
+
+        studentsSpinner.setAdapter(studentsAdapter);  */
 
         final ArrayList<String> cities = new ArrayList<>();
         cities.add("New York");
@@ -41,6 +59,8 @@ public class MainActivity extends AppCompatActivity {
         cities.add("Kansas");
 
 
+
+
         //Pass the data from Array list to the listview
         ArrayAdapter<String> citiesAdapter = new ArrayAdapter<>(
              this,
@@ -49,6 +69,18 @@ public class MainActivity extends AppCompatActivity {
      );
 
      citiesList.setAdapter(citiesAdapter);
+
+     studentsSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+         @Override
+         public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                Toast.makeText(MainActivity.this,studentsSpinner.getSelectedItem().toString() + " Selected", Toast.LENGTH_SHORT).show();
+         }
+
+         @Override
+         public void onNothingSelected(AdapterView<?> parent) {
+
+         }
+     });
 
      citiesList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
          @Override
