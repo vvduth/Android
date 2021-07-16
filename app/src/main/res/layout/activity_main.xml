@@ -7,12 +7,12 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <ImageView
-        android:layout_width="150dp"
-        android:layout_height="150dp"
-        android:src="@mipmap/adidas"
-        android:id="@+id/myImage"
-        android:layout_centerInParent="true"/>
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="100dp"
+        android:id="@+id/citiesList"/>
+
 
 
 </RelativeLayout>

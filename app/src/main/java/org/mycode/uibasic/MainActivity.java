@@ -7,45 +7,56 @@ import android.os.Bundle;
 import android.os.PersistableBundle;
 import android.os.SystemClock;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.EditText;
+import android.widget.ListView;
 import android.widget.ProgressBar;
 import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.util.ArrayList;
+
 public class MainActivity extends AppCompatActivity {
 
-   private CheckBox checkBoxHarryPotter, checkBoxHarryKane, checkBoxHarryStyles ;
-   private RadioGroup rgMaritalStatus;
-
-   private ProgressBar progressBar;
+   private ListView citiesList ;
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        //radio buttons
+        citiesList = findViewById(R.id.citiesList);
+
+        final ArrayList<String> cities = new ArrayList<>();
+        cities.add("New York");
+        cities.add("London");
+        cities.add("Tampere");
+        cities.add("Manchester");
+        cities.add("Sydney");
+        cities.add("Kansas");
 
 
-        //progress bar
+        //Pass the data from Array list to the listview
+        ArrayAdapter<String> citiesAdapter = new ArrayAdapter<>(
+             this,
+             android.R.layout.simple_list_item_1,
+             cities
+     );
 
+     citiesList.setAdapter(citiesAdapter);
 
+     citiesList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+         @Override
+         public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+             Toast.makeText(MainActivity.this, cities.get(position)+ " Selected",Toast.LENGTH_SHORT).show();
+         }
+     });
 
-
-
-
-       /*int checkButton =  rgMaritalStatus.getCheckedRadioButtonId();
-        switch (checkButton){}*/  //for checkinng the button before clicking it hehehe
-
-
-
-
-
-        //check and listen to the check box is selected or not
 
     }
 }
