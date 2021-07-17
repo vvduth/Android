@@ -37,8 +37,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        txtHello = findViewById(R.id.txtHello);
-        txtHello.setText(getString(R.string.hello)); //Import from string.xml
+
     }
 
     @Override
